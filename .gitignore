@@ -15,3 +15,6 @@
 
 # Debug files
 *.dSYM/
+
+#Testing files
+*.txt
