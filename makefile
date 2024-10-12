@@ -5,7 +5,7 @@ AR        = ar
 ARFLAGS        = src
 LINK	= ld
 RM		= rm -f
-SRC		= ft_strlen.s ft_strcpy_safe.s ft_strcmp.s ft_write.s ft_read.s ft_strdup.s
+SRC		= ft_strlen.s ft_strcpy_safe.s ft_strcmp.s ft_write.s ft_read.s ft_strdup.s ft_atoi_base.s ft_list_push_front.s ft_list_size.s
 OBJ			= $(SRC:%.s=%.o)
 NAME		= libasm.a
 HEADF		= libasm.h
