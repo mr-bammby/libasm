@@ -8,17 +8,18 @@ section   .text
 
 ft_strcmp:      push rbp
                 mov  rbp, rsp
-                mov rax, $0
-loop:           mov dh, byte[rsi]
-                mov ch, byte[rdi]
-                cmp dh, ch
+                xor rax, rax
+                xor rdx, rdx
+loop:           mov dl, byte[rsi]
+                mov al, byte[rdi]
+                cmp dl, al
                 jne out
-                cmp dh, 0x0
-                je end
+                cmp al, 0x0
+                je out
                 inc rsi
                 inc rdi
                 jmp loop
-end:            mov rax, $1
-out:            mov rsp, rbp
+out:            sub rax, rdx
+                mov rsp, rbp
                 pop rbp
                 ret
