@@ -64,9 +64,9 @@ _mea_base:      cmp byte[rsi + r10], 0x00 ;\0
 _mea_base_end:  mov r9, r10 ;base_len
                 cmp r9, 2
                 jl _end
-                jmp _skip_sp
+                jmp _skip_sp_begin
 _skip_sp_loop:  inc rdi               
-_skip_sp:       skip_char ' ', _skip_sp_loop
+_skip_sp_begin: skip_char ' ', _skip_sp_loop
                 skip_char 0x09, _skip_sp_loop ;\t
                 skip_char 0x0a, _skip_sp_loop ;\n
                 skip_char 0x0b, _skip_sp_loop ;\v
