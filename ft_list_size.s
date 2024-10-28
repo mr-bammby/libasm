@@ -10,24 +10,6 @@
 ;   int ft_list_size(t_list *begin_list);
 ; ----------------------------------------------------------------------------------------
 
-%macro get_data_pointer 2
-    mov %1, qword[%2]
-%endmacro
-
-%macro get_data 2
-    mov %1, qword[%2]
-    mov %1, qword[%1]
-%endmacro
-
-%macro get_next_pointer 2
-    mov %1, qword[%2 + 8]
-%endmacro
-
-%macro get_next 2
-    mov %1, qword[%2 + 8]
-    mov %1, qword[%1]
-%endmacro
-
 global    ft_list_size
 
 section   .text

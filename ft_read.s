@@ -1,6 +1,7 @@
 ; ----------------------------------------------------------------------------------------
 ; Preforms functionallity of read. Runs on 64-bit Linux only.
 ; ----------------------------------------------------------------------------------------
+
             global  ft_read
             extern  __errno_location
 
@@ -11,11 +12,11 @@ ft_read:   push    rbp
             mov     rax, $0
             syscall
             cmp     rax, -1
-            jg      end
+            jg      _end
             neg     rax
             mov     rdi, rax
             call    __errno_location  wrt ..plt
             mov     [rax], rdi
-end:        mov     rsp, rbp
+_end:        mov     rsp, rbp
             pop     rbp
             ret

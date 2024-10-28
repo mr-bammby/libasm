@@ -11,11 +11,11 @@ ft_write:   push    rbp
             mov     rax, $1
             syscall
             cmp     rax, -1
-            jg      end
+            jg      _end
             neg     rax
             mov     rdi, rax
             call    __errno_location  wrt ..plt
             mov     [rax], rdi
-end:        mov     rsp, rbp
+_end:        mov     rsp, rbp
             pop     rbp
             ret

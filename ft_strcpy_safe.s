@@ -1,6 +1,7 @@
 ; ----------------------------------------------------------------------------------------
 ; Preforms functionallity of strcpy. Runs on 64-bit Linux only.
 ; ----------------------------------------------------------------------------------------
+
 global    ft_strcpy
 
 section  .note.GNU-stack
@@ -11,16 +12,16 @@ ft_strcpy:      push rbp
                 mov  rbp, rsp
                 mov rax, rdi
                 xor rdx, rdx
-skip:           cmp byte[rsi + rdx], 0x0
-                je cpy
+_skip:           cmp byte[rsi + rdx], 0x0
+                je _cpy
                 inc rdx
-                jmp skip
-cpy:            mov ch, [rsi + rdx]
+                jmp _skip
+_cpy:           mov ch, [rsi + rdx]
                 mov byte [rdi + rdx], ch
                 cmp rdx, 0
-                je end
+                je _end
                 dec rdx
                 jmp cpy
-end:            mov rsp, rbp
+_end:           mov rsp, rbp
                 pop rbp
                 ret

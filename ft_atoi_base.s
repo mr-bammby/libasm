@@ -30,22 +30,28 @@
 ;   char2num:
 ;       1. Get index of char in base
 ;       2. retun index
+;
+; int ft_atoi_base(char *src, char *base)
 ; ----------------------------------------------------------------------------------------
 
+
+;skips character adnh jumps to given label
 %macro skip_char 2
     cmp byte [rdi], %1
     je %2
 %endmacro
 
-%macro  find_in_base 2
+;Finds the firat case of char in base
+;keep in mind uses local lables
+%macro  find_in_base 1
             xor r10, r10
-_base_loop_%2: cmp byte[rsi + r10], %1
-            je _base_end_%2
+.base_loop: cmp byte[rsi + r10], %1
+            je .base_end
             cmp byte[rsi + r10], 0x00 ;\0
-            je _base_end_%2
+            je .base_end
             inc r10
-            jmp _base_loop_%2
-_base_end_%2:  
+            jmp .base_loop
+.base_end:  
 %endmacro
 
 global    ft_atoi_base
@@ -80,7 +86,7 @@ _det_sign_end:  inc rdi
 _num_cnt_loop:  mov cl, byte [rdi + rdx]
                 cmp cl, 0x0
                 je _num_cnt_end
-                find_in_base cl, 1
+                find_in_base cl
                 cmp r10, r9
                 je _num_cnt_end
                 inc rdx
@@ -91,7 +97,7 @@ _add_loop:      cmp rdx, 0
                 je _add_end
                 dec rdx
                 mov cl, byte [rdi + rdx]
-                find_in_base cl, 2
+                find_in_base cl
                 imul r10, r8
                 add rax, r10
                 imul r8, r9

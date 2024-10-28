@@ -2,6 +2,7 @@
 ; Preforms functionallity of strcpy. Runs on 64-bit Linux only.
 ; Saves whole string into stack. Follows behaviour of std implemntion of strcpy.
 ; ----------------------------------------------------------------------------------------
+
 global    ft_strcpy
 
 section  .note.GNU-stack

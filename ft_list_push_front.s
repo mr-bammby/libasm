@@ -1,5 +1,5 @@
 ; ----------------------------------------------------------------------------------------
-; Preforms functionallity of ft_list_push_front. Runs on 64-bit Linux only.
+; Performs functionallity of ft_list_push_front. Runs on 64-bit Linux only.
 ;
 ; typedef struct s_list
 ; {
