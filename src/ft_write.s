@@ -13,9 +13,10 @@ ft_write:   push    rbp
             cmp     rax, -1
             jg      _end
             neg     rax
-            mov     rdi, rax
+            mov     rbx, rax
             call    __errno_location  wrt ..plt
-            mov     [rax], rdi
-_end:        mov     rsp, rbp
+            mov     [rax], rbx
+            mov     rax, -1
+_end:        mov    rsp, rbp
             pop     rbp
             ret
