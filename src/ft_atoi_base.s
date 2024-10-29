@@ -1,7 +1,8 @@
 ; ----------------------------------------------------------------------------------------
 ; Preforms functionallity of atoi_base. Runs on 64-bit Linux only.
-; input pointer to input string
-; intiger with number base [2, 16]
+; input:
+; pointer to input string
+; pointer to string of base 
 ;
 ; program flow:
 ;   setup:
