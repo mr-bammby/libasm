@@ -1,12 +1,12 @@
 ; ----------------------------------------------------------------------------------------
 ; Preforms functionallity of write. Runs on 64-bit Linux only.
 ; ----------------------------------------------------------------------------------------
-            global  ft_write_asm
+            global  ft_write
             extern  __errno_location
 
             section .text
 
-ft_write_asm:   push    rbp
+ft_write:   push    rbp
             mov     rbp, rsp
             mov     rax, $1
             syscall

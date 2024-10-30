@@ -3,10 +3,12 @@ AS		= nasm
 ASFLAGS	= -felf64
 AR        = ar
 ARFLAGS   = src
+CC = gcc 
 
 RM		= rm -f
 SRC_DIR		= src/
 OBJ_DIR		= obj/
+TEST_DIR    = test/
 MAIN_SRC	= ft_strlen.s ft_strcpy.s ft_strcmp.s ft_write.s ft_read.s ft_strdup.s
 BONUS_SRC	= ft_atoi_base.s ft_list_push_front.s ft_list_size.s ft_list_sort.s ft_list_remove_if.s
 MAIN_OBJ	= $(MAIN_SRC:%.s=%.o)
@@ -15,6 +17,7 @@ MAIN_OBJ_FILES	= $(addprefix $(OBJ_DIR),$(MAIN_OBJ))
 BONUS_OBJ_FILES	= $(addprefix $(OBJ_DIR),$(BONUS_OBJ))
 OBJF 		= $(SRCF:$(SRCD)%.c=$(OBJD)%.o)
 NAME		= libasm.a
+TEST_NAME   = test.out
 HEADF		= libasm.h
 
 ${OBJ_DIR}%.o: $(SRC_DIR)%.s
@@ -33,10 +36,15 @@ all:  ${MAIN_OBJ_FILES}  ${BONUS_OBJ_FILES}
 clean:        
 	${RM} ${MAIN_OBJ_FILES} ${BONUS_OBJ_FILES}
 
+test: all
+	gcc ${TEST_DIR}* ${NAME} -o ${TEST_NAME}
+	./${TEST_NAME}
+
 
 fclean: clean
 	${RM} ${NAME}
+	@${RM} ${TEST_NAME}
 
 re: fclean all
 
-.PHONY: all clean fclean re bouns
+.PHONY: all clean fclean re bouns test
