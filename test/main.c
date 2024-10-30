@@ -14,5 +14,9 @@ void main(void)
     test_strcpy(ft_strcpy, strcpy);
     printf("<-------- WRITE --------->\n");
     test_write(ft_write, write);
+    printf("<-------- READ --------->\n");
+    test_read(ft_read, read);
+    printf("<-------- STR DUP ------->\n");
+    test_strdup(ft_strdup, strdup);
 
 }
