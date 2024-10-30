@@ -1,7 +1,8 @@
-#include "inc/libasm.h"
-#include "inc/test.h"
+#include "../inc/libasm.h"
+#include "../inc/test.h"
 #include <stdio.h>
 #include <string.h>
+#include <unistd.h>
 
 void main(void)
 {
@@ -11,5 +12,7 @@ void main(void)
     test_strcmp(ft_strcmp, strcmp);
     printf("<-------- STR CPY ------->\n");
     test_strcpy(ft_strcpy, strcpy);
+    printf("<-------- WRITE --------->\n");
+    test_write(ft_write, write);
 
 }

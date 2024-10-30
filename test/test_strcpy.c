@@ -5,13 +5,11 @@ void test_strcpy(char * (*tested_fun)(char *, const char *), char * (*reference_
 {
     char sample1_src_ref[] = "arija";
     char sample1_dest_ref[10] ;
-    char distance1[100] ;
     char sample1_src_test[] = "arija";
     char sample1_dest_test[10];
 
     char sample2_src_ref[] = "mumija";
     char sample2_dest_ref[20];
-    char distance2[100] ;
     char sample2_src_test[] = "mumija";
     char sample2_dest_test[20];
 
@@ -22,14 +20,13 @@ void test_strcpy(char * (*tested_fun)(char *, const char *), char * (*reference_
 
     char sample4_src_ref[20] = "arija";
     char *sample4_dest_ref = &sample4_src_ref[3];
-    char distance4[100] ;
     char sample4_src_test[20] = "arija";
     char *sample4_dest_test = &sample4_src_test[3];
 
-    char sample5_src_ref[2] = "1";
-    char sample5_dest_ref[2] = "";
-    char sample5_src_test[2] = "1";
-    char sample5_dest_test[2] = "";
+    char sample5_dest_ref[20] = "baram";
+    char *sample5_src_ref = &sample5_dest_ref[3];
+    char sample5_dest_test[20] = "baram";
+    char *sample5_src_test = &sample5_dest_test[3];
 
     char sample6_src_ref[2] = "a";
     char sample6_dest_ref[2] = "b";
