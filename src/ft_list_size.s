@@ -17,7 +17,7 @@ section   .text
 ft_list_size: push rbp
                     mov rbp, rsp
                     xor rax, rax
-_loop:               cmp rdi, 0x0
+_loop:              cmp rdi, 0x0
                     je _end
                     inc rax
                     mov rdi, [rdi + 8]
