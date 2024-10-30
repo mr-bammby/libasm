@@ -1,5 +1,5 @@
 # C testing files
-*.c
+./*.c
 
 # Object files
 *.o
