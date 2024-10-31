@@ -9,6 +9,12 @@ void test_read(long (*tested_fun)(int, void *, unsigned long), long (*reference_
 void test_strdup(char * (*tested_fun)(const char *), char  *(*reference_fun)(const char *));
 void test_list_size(void);
 void test_atoi_base(void);
+void test_list_push_front(void);
+void test_list_remove_if(void);
+void test_list_sort(void);
+
+
+
 
 
 #endif /* IG_LIBASM_TEST_ */

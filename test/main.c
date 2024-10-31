@@ -4,7 +4,7 @@
 #include <string.h>
 #include <unistd.h>
 
-void main(void)
+int main(void)
 {
     printf("<-------- STR LEN ------->\n");
     test_strlen(ft_strlen, strlen);
@@ -22,9 +22,14 @@ void main(void)
     test_atoi_base(); 
     printf("<-------- LIST SIZE ----->\n");
     test_list_size();
+    printf("<----- LIST PUSH FRONT -->\n");
+    test_list_push_front();
+    printf("<----- LIST REMOVE IF -->\n");
+    test_list_remove_if();
+    printf("<----- LIST SORT ------->\n");
+    test_list_sort();
 
-    
-
+    return(0);
 
 
 }
