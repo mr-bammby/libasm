@@ -64,6 +64,11 @@ ft_atoi_base:   push rbp
                 xor rdx, rdx ;num_itr
                 xor r11, r11 ;sign
                 xor r10, r10 ;base_itr
+                xor rax, rax
+                cmp rsi, 0x0
+                je _end
+                cmp rdi, 0x0
+                je _end
 _mea_base:      cmp byte[rsi + r10], 0x00 ;\0
                 je _mea_base_end
                 inc r10

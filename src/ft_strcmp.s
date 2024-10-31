@@ -9,8 +9,10 @@ section   .text
 
 ft_strcmp:      push rbp
                 mov  rbp, rsp
-                xor rax, rax
+                xor rax, rax 
                 xor rdx, rdx
+                cmp rdi, rsi ;check if both pointers are same and return 0
+                je _out
 _loop:          mov dl, byte[rsi]
                 mov al, byte[rdi]
                 cmp dl, al
