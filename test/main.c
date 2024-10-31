@@ -18,5 +18,13 @@ void main(void)
     test_read(ft_read, read);
     printf("<-------- STR DUP ------->\n");
     test_strdup(ft_strdup, strdup);
+    printf("<-------- ATOI BASE ----->\n");
+    test_atoi_base(); 
+    printf("<-------- LIST SIZE ----->\n");
+    test_list_size();
+
+    
+
+
 
 }

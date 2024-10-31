@@ -7,6 +7,8 @@ void test_strcpy(char * (*tested_fun)(char *, const char *), char * (*reference_
 void test_write(long (*tested_fun)(int, const void *, unsigned long), long (*reference_fun)(int, const void *, unsigned long));
 void test_read(long (*tested_fun)(int, void *, unsigned long), long (*reference_fun)(int, void *, unsigned long));
 void test_strdup(char * (*tested_fun)(const char *), char  *(*reference_fun)(const char *));
+void test_list_size(void);
+void test_atoi_base(void);
 
 
 #endif /* IG_LIBASM_TEST_ */

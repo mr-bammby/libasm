@@ -8,6 +8,7 @@ void test_strdup(char * (*tested_fun)(const char *), char * (*reference_fun)(con
     char sample2[] = "12345678 112456";
     char sample3[] = "12345678\0112456";
     char *sample4 = strdup("HnjoHnjo\0");
+    char *sample5 =  0; /* Seagfault in original function. */
     char *test;
     char* ref;
 
