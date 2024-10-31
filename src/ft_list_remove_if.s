@@ -6,6 +6,10 @@
 ;
 ; The data from an element to be erased should be freed using free_fct
 ;
+; segfault if any of function pointers are NULL ptr
+; segfault for NULL ptr in data ref depends on cmp function
+; returns with no effect if begin list is NULL
+;
 ; typedef struct s_list
 ; {
 ;   void *data;
@@ -27,6 +31,8 @@ ft_list_remove_if:  push rbp
                     push r13
                     push r14
                     push r15
+                    cmp rdi, 0x0
+                    je _end
                     mov rbx, rdi ;begining of list
                     mov r12, rsi ;data_ref
                     mov r13, rdx ;cmp_fun

@@ -1,6 +1,9 @@
 ; ----------------------------------------------------------------------------------------
 ; Preforms functionallity of ft_list_sort. Runs on 64-bit Linux only.
 ;
+;   Segfult if compare function pointer is not appropiate
+;   Skips if begin list is NULL
+;
 ; typedef struct s_list
 ; {
 ;   void *data;
@@ -22,6 +25,8 @@ ft_list_sort:   push rbp
                 push r14
                 push r15
                 push rdi; pointer to list start
+                cmp rdi, 0x0
+                je _end
                 mov r13, qword[rdi]; pointer to current element
                 mov r12, rsi
 _loop:          cmp r13, 0x0
