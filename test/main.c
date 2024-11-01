@@ -1,4 +1,5 @@
 #include "../inc/libasm.h"
+#include "../inc/libasm_bonus.h"
 #include "../inc/test.h"
 #include <stdio.h>
 #include <string.h>
