@@ -31,7 +31,7 @@ ft_list_sort:   push rbp
                 mov r12, rsi
 _loop:          cmp r13, 0x0
                 je _end
-                mov r9,  qword[rsp]
+                mov r9,  qword[rsp] ;double pointer to list
                 mov r14, qword[r9] ;pointer to scanned element
                 mov r15, r9 ;next of prev elelemt(at the beginig pointer to first elemet)
                 mov rbx, qword[r13 + 8] ; copy next of current element, used to increase current element
@@ -47,8 +47,8 @@ _start_loop2:   cmp r14, 0x0
                 mov rdi, [r13]
                 mov rsi, [r14]
                 call r12 ; call compare functiom
-                cmp rax, 0x0
-                jg _loop2  ; when current element is greater than scanned element go to next scanned element
+                cmp rax, 0x7FFFFFFF ;MAX int32(long) postive number
+                jle _loop2  ; when current element is greater than scanned element go to next scanned element
 _next_loop:     mov qword[r15], r13     ;insert current element
                 mov qword[r13 + 8], r14
 _skip_loop:     mov r13, rbx; ; increse current element

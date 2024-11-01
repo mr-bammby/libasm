@@ -13,7 +13,8 @@ _str_len:       cmp byte [rdi + rax], 0x0
                 je _allocate
                 inc rax
                 jmp _str_len
-_allocate:      push r12
+_allocate:      inc rax ;for null terminator
+                push r12
                 mov r12, rdi
                 mov rdi, rax
                 push rbx
