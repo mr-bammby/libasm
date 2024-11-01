@@ -1,6 +1,6 @@
 
 AS		= nasm
-ASFLAGS	= -felf64
+ASFLAGS	= -felf64 -g
 AR        = ar
 ARFLAGS   = src
 CC = gcc 
@@ -37,7 +37,7 @@ clean:
 	${RM} ${MAIN_OBJ_FILES} ${BONUS_OBJ_FILES}
 
 test: all
-	gcc ${TEST_DIR}* ${NAME} -o ${TEST_NAME}
+	gcc -g3 ${TEST_DIR}* ${NAME} -o ${TEST_NAME}
 	./${TEST_NAME}
 
 

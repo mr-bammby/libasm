@@ -35,6 +35,7 @@ void test_strcmp(int (*tested_fun)(const char *, const char *), int (*reference_
         }
         else
         {
+            printf("Ref: %d, Test: %d\n",reference_fun(sample_list[i][0], sample_list[i][1]), tested_fun(sample_list[i][0], sample_list[i][1]) );
             printf("FAIL\n");
         }
     }

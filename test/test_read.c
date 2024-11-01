@@ -17,7 +17,7 @@ void test_read(long (*tested_fun)(int, void *, unsigned long), long (*reference_
     int ret_ref, ret_test;
     errno = 0;
 
-    printf("Check if both lines are same in each TEST 0 - 3. If not its FAIL\n");
+    printf("Check if both lines are same in each TEST 4 - 6. If not its FAIL\n");
     printf("Test 0 \n");
     ret_test = tested_fun(7, (void *)sample1, 0);
     errno_temp = errno;

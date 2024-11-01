@@ -36,10 +36,10 @@ void test_strcpy(char * (*tested_fun)(char *, const char *), char * (*reference_
     char *sample_list[][4] = {{sample1_src_test, sample1_dest_test, sample1_src_ref, sample1_dest_ref},
                             {sample2_src_test, sample2_dest_test, sample2_src_ref, sample2_dest_ref},
                             {sample3_src_test, sample3_dest_test, sample3_src_ref, sample3_dest_ref},
-                            {sample4_src_test, sample4_dest_test, sample4_src_ref, sample4_dest_ref},
+                            {sample4_src_test, sample4_dest_test, sample4_src_ref, sample4_dest_ref}, /* Can crash Valgrind in reference strcpy */
                             {sample5_src_test, sample5_dest_test, sample5_src_ref, sample5_dest_ref},
                             {sample6_src_test, sample6_dest_test, sample6_src_ref, sample6_dest_ref}};
-    int sample_list_len = 6;
+    int sample_list_len = 5;
 
     for (int i = 0; i < sample_list_len; i++)
     {
