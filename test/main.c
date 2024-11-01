@@ -30,6 +30,4 @@ int main(void)
     test_list_sort();
 
     return(0);
-
-
 }

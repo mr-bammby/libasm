@@ -6,10 +6,10 @@
 
 void test_list_sort(void)
 {
-    char s1[] = "TT ";
-	char s2[] = "Mia ";
-	char s3[] = "WTF ";
-	char s4[] = "Mio ";
+    char s1[] = "QQ ";
+	char s2[] = "42 ";
+	char s3[] = "11 ";
+	char s4[] = "Aka ";
 
 	t_list *start = NULL;
 
@@ -28,6 +28,8 @@ void test_list_sort(void)
 	t_list elem4;
 	elem4.data = (void*)s4;
 	elem4.next = NULL;
+
+	printf("elem1: %p\nelem2: %p\nelme3: %p\nelem4: %p\n", &elem1, &elem2, &elem3, &elem4);
 
 	ft_list_sort(&start, strcmp);
 
